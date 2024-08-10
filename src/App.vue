@@ -1,27 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="w-full">
+    <button @click="toggleNav" class="fixed"><IconSymbol name="menu" class="w-16 p-3 top-1 absolute" /></button>
+    <SideBar />
+    <AddThoughtForm />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from 'vue'
+import AddThoughtForm from './components/AddThoughtForm.vue'
+import SideBar from './components/SideBar.vue'
+import { useNav } from './composables/useNav'
+import IconSymbol from './components/IconSymbol.vue'
+import { useLocalStorage } from './composables/useLocalStorage'
+
+const { showNav, toggleNav } = useNav()
+const { openDB } = useLocalStorage()
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
-  }
-});
+    AddThoughtForm,
+    SideBar,
+    IconSymbol,
+  },
+  setup() {
+    openDB()
+    return {
+      showNav,
+      toggleNav,
+    }
+  },
+})
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

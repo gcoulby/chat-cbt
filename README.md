@@ -1,4 +1,8 @@
-# cbt-app
+# ChatCBT
+
+An AI Cognitive Behavioural Therapy Assistant powered by CloudFlare AI workers. 
+
+Visit the app @ https://gcoulby.github.io/chat-cbt/
 
 ## Project setup
 ```

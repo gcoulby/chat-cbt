@@ -1,0 +1,21 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lilita+One&display=swap');
+
+    .font-josefin {
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .autoresize {
+        resize: none;
+        overflow: hidden;
+        min-height: 40px;
+        max-height: 120px;
+      }
+}
