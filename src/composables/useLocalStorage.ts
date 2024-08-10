@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const error = ref<string>('')
 const db = ref<Storage | null>(null)
-const prompt = ref("I have 2 interviews lined up for C++ roles, but I am not sure I'm good enough for the job")
+const prompt = ref('')
 const thoughts = ref<Thought[]>([])
 const thought = ref<Thought>({
   id: '',

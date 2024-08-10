@@ -15,7 +15,7 @@
     .autoresize {
         resize: none;
         overflow: hidden;
-        min-height: 40px;
+        min-height: 20px;
         max-height: 120px;
       }
 }

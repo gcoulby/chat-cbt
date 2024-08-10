@@ -23,6 +23,7 @@
               v-model="prompt"
               class="w-full p-2 bg-slate-50 border-b-2 border-slate-800 text-xl flex flex-col justify-end autoresize focus-visible:outline-0 font-normal"
               type="text"
+              rows="1"
               ref="textarea"
               @input="adjustTextarea"
             ></textarea>
