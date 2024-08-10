@@ -57,7 +57,6 @@ const adjustTextarea = () => {
 }
 
 const sendPrompt = async () => {
-  console.log('AUTH TOKEN', process.env.VUE_APP_AUTH_TOKEN)
   clicked.value = true
   // fetch('http://localhost:8787/', {
   fetch('https://cbt.gcoulby.workers.dev/', {
@@ -65,7 +64,7 @@ const sendPrompt = async () => {
     mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: process.env.VUE_APP_AUTH_TOKEN,
+      Authorization: '08698f09-1bdd-45e3-a357-c1f7a588a179', // This is fine, it's only to prevent bots from using the API
     },
     body: JSON.stringify({ prompt: prompt.value }),
   })
