@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { Thought } from '@/types'
-import { ref, defineProps } from 'vue'
+import { defineProps } from 'vue'
 
 defineProps({
   thought: {

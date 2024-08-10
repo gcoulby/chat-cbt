@@ -69,7 +69,7 @@ const sendPrompt = async () => {
   })
     .then(async (res) => {
       res = await res.json()
-      let t = JSON.parse((res as any).response) as Thought
+      const t = JSON.parse((res as any).response) as Thought
       t.id = v4()
       t.date = new Date()
       t.prompt = prompt.value

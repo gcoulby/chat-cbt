@@ -20,14 +20,13 @@
 
 <script setup lang="ts">
 import { Thought } from '@/types'
-import { ref, defineProps, computed } from 'vue'
+import { defineProps, computed } from 'vue'
 import { useLocalStorage } from '@/composables/useLocalStorage'
 import { useNav } from '@/composables/useNav'
 import Popper from 'vue3-popper'
-import IconSymbol from './IconSymbol.vue'
 
 const { setActiveThought, deleteThought } = useLocalStorage()
-const { showNav, toggleNav } = useNav()
+const { toggleNav } = useNav()
 
 let props = defineProps({
   thought: {

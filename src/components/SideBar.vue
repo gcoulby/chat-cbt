@@ -18,12 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useNav } from '../composables/useNav'
 import { useLocalStorage } from '@/composables/useLocalStorage'
 import NavItem from './NavItem.vue'
 
-const { thought, thoughts, resetActiveThought } = useLocalStorage()
+const { thoughts, resetActiveThought } = useLocalStorage()
 
 import IconSymbol from './IconSymbol.vue'
 

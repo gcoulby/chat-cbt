@@ -40,7 +40,7 @@ export const useLocalStorage = () => {
 
   const getThoughts = async () => {
     try {
-      let t = db.value?.getItem('ChatCBT-thoughts')
+      const t = db.value?.getItem('ChatCBT-thoughts')
 
       if (!t) {
         error.value = 'Error getting thoughts from the database'
