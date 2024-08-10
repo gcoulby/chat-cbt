@@ -22,7 +22,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          VUE_APP_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
 
       - name: Deploy to GH Pages 🚀
         if: ${{ github.event_name != 'pull_request' }}
