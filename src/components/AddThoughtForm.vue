@@ -57,6 +57,7 @@ const adjustTextarea = () => {
 }
 
 const sendPrompt = async () => {
+  console.log('AUTH TOKEN', process.env.VUE_APP_AUTH_TOKEN)
   clicked.value = true
   // fetch('http://localhost:8787/', {
   fetch('https://cbt.gcoulby.workers.dev/', {
