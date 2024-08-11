@@ -7,7 +7,12 @@
 
     <h1 class="text-4xl font-light text-center">ChatCBT</h1>
 
-    <button @click="startNewThought" class="w-full p-4 my-4 bg-purple-500 hover:bg-purple-400 text-white rounded-md font-bold">💭 New Thought</button>
+    <button
+      @click="startNewThought"
+      class="w-full p-4 my-4 bg-purple-500 hover:bg-purple-400 text-white rounded-md font-bold flex flex-row gap-2 justify-center"
+    >
+      <IconSymbol name="thought_simple" class="w-6 h-6" /> New Thought
+    </button>
 
     <h2 class="text-2xl font-normal my-4">Previous Thoughts</h2>
     <div class="flex flex-col">
