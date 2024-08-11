@@ -7,13 +7,17 @@
 
     <h1 class="text-4xl font-light text-center">ChatCBT</h1>
 
-    <button @click="startNewThought" class="w-full p-4 my-4 bg-purple-500 text-white rounded-md font-bold">💭 New Thought</button>
+    <button @click="startNewThought" class="w-full p-4 my-4 bg-purple-500 hover:bg-purple-400 text-white rounded-md font-bold">💭 New Thought</button>
 
     <h2 class="text-2xl font-normal my-4">Previous Thoughts</h2>
     <div class="flex flex-col">
       <p v-if="thoughts.length === 0" class="text-xl">No thoughts yet</p>
       <NavItem v-else v-for="thought in thoughts" :key="thought.id" :thought="thought" />
     </div>
+
+    <button @click="downloadData" class="p-2 my-4 font-bold flex flex-row gap-2 hover:bg-slate-200 rounded">
+      <IconSymbol name="arrow-down-tray" class="w-5" /> <span>Export Data</span>
+    </button>
   </div>
 </template>
 
@@ -31,6 +35,16 @@ const { showNav, toggleNav } = useNav()
 const startNewThought = () => {
   resetActiveThought()
   toggleNav()
+}
+
+const downloadData = () => {
+  const data = JSON.stringify(thoughts.value)
+  const blob = new Blob([data], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = 'thoughts.json'
+  a.click()
 }
 </script>
 
